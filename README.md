@@ -1,4 +1,5 @@
-# Ejemplo
+# Contactos
+Aplicación para gestionar una lista de contactos (mostrar todos, ver detalle, editar, crear y eliminar), utilizando Angular2 y Firebase. Para los estilos y la maquetación se utiliza Angular Material y Bootstrap. Para la gestión de la base de datos Firebase se utiliza AngularFire.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
 
