@@ -1,0 +1,33 @@
+<md-card *ngIf="mostrar">
+  <md-card-title>
+    Agregar del contacto
+  </md-card-title>
+  <md-card-content>
+    <form novalidate [formGroup]="form" (ngSubmit)= "onGuardar()">
+      <md-input-container>
+        <input type="text" mdInput placeholder="Nombre" formControlName="nombre">
+        <md-error>{{validationMessagges.nombre.required}}</md-error>
+      </md-input-container>
+      <md-input-container>
+        <input type="text" mdInput placeholder="Apellidos" formControlName="apellidos">
+        <md-error>{{validationMessagges.apellidos.required}}</md-error>
+      </md-input-container>
+      <md-input-container>
+        <input type="text" mdInput placeholder="Direccion" formControlName="direccion">
+        <md-error>{{validationMessagges.direccion.required}}</md-error>
+      </md-input-container>
+      <md-input-container>
+        <input type="text" mdInput placeholder="Telefono" formControlName="telefono">
+      </md-input-container>
+      <md-input-container>
+        <input type="text" mdInput placeholder="Email" formControlName="email">
+      </md-input-container>
+      <md-input-container>
+        <input type="text" mdInput placeholder="Empresa" formControlName="empresa">
+      </md-input-container>
+      <button type="submit" md-button [disabled]="form.invalid">Guardar</button>
+      <button type="button" md-button (click)="onCancelar()">Cancelar</button>
+    </form>
+  </md-card-content>
+</md-card>
+

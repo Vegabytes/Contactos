@@ -1,0 +1,46 @@
+<md-toolbar color="primary">
+    <span>
+      {{title}}
+    </span>
+    <span class="fill-remaining-space">
+    </span>
+      <span>
+      Firebase
+    </span>
+</md-toolbar>
+<md-card>
+  <md-select placeholder="Ciudad" (change)="onSelect($event)">
+    <md-option *ngFor="let ciudad of ciudades" [value]="ciudad">
+      {{ciudad}}
+    </md-option>
+  </md-select>
+</md-card>
+<md-card>
+  <table class="table table-striped table-hover">
+    <thead class="thead-inverse">
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Teléfono</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contacto of contactos">
+        <td>{{contacto.nombre}}</td>
+        <td>{{contacto.apellidos}}</td>
+        <td>{{contacto.telefono}}</td>
+        <td>
+          <button md-button (click)="onClick(contacto)">Detalles</button>
+          <button md-button (click)="onEditar(contacto)" color="accent">Editar</button>
+          <button md-button (click)="onEliminar(contacto)" color="warm">Eliminar</button>
+        </td>
+    </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="onAgregar()">Agregar</button>
+</md-card>
+<app-detalles [contacto]="contacto" (cerrar)="cerrarDetalles()"></app-detalles>
+<app-editar [contacto]="contactoEditar" (cerrar)="cerrarEdicion()"></app-editar>
+<app-agregar [mostrar]="contactoAgregar" (cerrar)="contactoAgregar = false"></app-agregar>
+
+

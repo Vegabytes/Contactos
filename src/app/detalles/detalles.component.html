@@ -1,0 +1,18 @@
+<md-card *ngIf="contacto">
+  <md-card-title>
+    Detalles del contacto
+  </md-card-title>
+  <md-card-content>
+    Nombre: {{contacto.nombre}}<br>
+    Apellidos: {{contacto.apellidos}}<br>
+    Ciudad: {{contacto.direccion}}<br>
+    Teléfono: {{contacto.telefono}}<br>
+    Email: {{contacto.email}}<br>
+    Empresa: {{contacto.empresa}}<br>
+
+    <button md-button (click)="onCerrar()">Cerrar</button>
+
+
+  </md-card-content>
+
+</md-card>
